@@ -26,13 +26,11 @@ const loadLessons = () => {
 
 const removeActive = () => {
   const lessonButtons = document.querySelectorAll(".lesson-btn");
-  //   console.log(lessonButtons);
   lessonButtons.forEach((btn) => btn.classList.remove("active"));
 };
 
 const loadLevelWord = (id) => {
   manageSpinner(true);
-
   const url = `https://openapi.programming-hero.com/api/level/${id}`;
 
   fetch(url)
@@ -44,8 +42,6 @@ const loadLevelWord = (id) => {
       displayLevelWord(data.data);
     });
 };
-
-
 
 const loadWordDetail = async (id) => {
   const url = `https://openapi.programming-hero.com/api/word/${id}`;
@@ -77,7 +73,6 @@ const displayWordDetails = (word) => {
             <h2 class="font-bold">Synonym</h2>
             <div class="">${createElements(word.synonyms)}</div>
           </div>
-    
     
     `;
   document.getElementById("word_modal").showModal();
